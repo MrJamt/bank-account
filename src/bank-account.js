@@ -29,11 +29,10 @@ export class BankAccount {
   }
 
   deposit(monto) {
+    if(this.estado != true || monto<0)
+      throw new ValueError();
     if(this.estado == true)
       this.total += monto;
-    else
-      throw new ValueError();
-    
   }
 
   withdraw(monto) {
