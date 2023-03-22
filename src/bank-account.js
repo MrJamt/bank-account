@@ -14,7 +14,11 @@ export class BankAccount {
   }
 
   close() {
+    if(this.estado == true)
     this.estado = false;
+  else
+    throw new ValueError();
+    
   }
 
   deposit(monto) {
